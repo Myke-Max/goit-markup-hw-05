@@ -26,6 +26,7 @@
   --social-icon: #afb1b8;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --timing250ms: transform 250ms;
+  --bgc-portfolio-text: rgba(33, 150, 243, 0.9);
 }
 /* Body */
 body {
@@ -710,13 +711,28 @@ button {
   position: relative;
 }
 
-.portfolio .text-container {
+.portfolio .portfolio-container::before {
+  display: inline-block;
+  content: "";
   position: absolute;
-  bottom: 0;
-  right: 0;
+  opacity: 1;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  padding: 63px 24px;
+  transform: translateY(100%);
+  background-color: var(--bgc-portfolio-text);
+}
+
+.portfolio .item:hover .portfolio-container::before {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.portfolio .text-container {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .portfolio .info {
