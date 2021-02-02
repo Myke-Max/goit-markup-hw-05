@@ -25,7 +25,7 @@
   --bgc-team: #f5f4fa;
   --social-icon: #afb1b8;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --timing250ms: transform 250ms;
+  --timing250ms: 250ms;
   --bgc-portfolio-text: rgba(33, 150, 243, 0.9);
 }
 /* Body */
@@ -262,6 +262,7 @@ header .container {
   height: 100%;
   opacity: 1;
   background: rgba(0, 0, 0, 0.2);
+  transition: opacity var(--timing250ms) var(--timing-function);
 }
 
 .is-hidden {
@@ -269,14 +270,18 @@ header .container {
   pointer-events: none;
 }
 
+.is-hidden .modal {
+  transform: translate(-50% -50%) scale(1);
+}
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.9);
   width: 528px;
   height: 581px;
   background-color: var(--text-title-white);
+  transition: opacity var(--timing250ms) var(--timing-function);
 }
 
 .close {
@@ -292,9 +297,6 @@ header .container {
   background-color: var(--text-title-white);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-}
-
-.icon-close {
 }
 
 /* qualities */
@@ -709,43 +711,38 @@ button {
 
 .portfolio .portfolio-container {
   position: relative;
+  overflow: hidden;
 }
 
-.portfolio .portfolio-container::before {
+.portfolio .text-container {
   display: inline-block;
   content: "";
   position: absolute;
-  opacity: 1;
+  opacity: 0;
   top: 0;
   left: 0;
+  padding: 63px 24px;
   width: 100%;
   height: 100%;
+  transition: var(--timing250ms) var(--timing-function);
   transform: translateY(100%);
   background-color: var(--bgc-portfolio-text);
 }
 
-.portfolio .item:hover .portfolio-container::before {
-  transform: translateY(0);
+.portfolio .item:hover .text-container {
+  transform: translateY(0%);
   opacity: 1;
 }
 
-.portfolio .text-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
 .portfolio .info {
+  text-align: left;
+  position: absolute;
+  margin-bottom: 0px;
+  margin-top: 0px;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.56;
-
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-.img-port {
-  margin-top: 0px;
-  margin-bottom: 20px;
+  color: var(--text-title-white);
 }
 
 .portfolio .padding-portfolio {
