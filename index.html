@@ -18,11 +18,11 @@
     <header>
         <div class="container">
         <nav class="navigation">
-            <a href="./index.html"class="logo"> <span class="web">Web</span>Studio</a>
+            <a href="./index.html" class="logo"> <span class="web">Web</span>Studio</a>
 
             <ul class="site-nav list">
                 <li class="item" >
-                    <a class="link blue" href="./index.html">Студия</a>
+                    <a class="link current" href="./index.html">Студия</a>
 
                 </li>
                 <li class="item" >
@@ -63,8 +63,7 @@
             
                 <div class="container">
                         <h1 class="title">Эффективные решения для вашего бизнеса</h1>
-                        <button class="button">Заказать услугу</button>
-                    
+                        <button class="button" data-modal-open>Заказать услугу</button>                   
                 </div>
             </section>
         
@@ -134,9 +133,25 @@
             <div class="container">
                 <h2 class="title">Чем мы занимаемся</h2>
                 <ul class="work-list list">
-                    <li class="item"><img src="./img/our-work/img1.png" alt="Клавиатура и планшет" width="370" height="294"></li>
-                    <li class="item"><img src="./img/our-work/img2.png" alt="Телефон и компютер" width="370" height="294"></li>
-                    <li class="item"><img src="./img/our-work/img3.png " alt="Человек и планшет" width="370" height="294"></li>
+                    <li class="item">                       
+                                <img src="./img/our-work/img1.png" alt="Клавиатура и планшет" width="370" height="294">
+                        <div class="product-work-container">
+                                <p class="info">Десктопные приложения</p>                           
+                        </div>
+                        
+                    </li>
+                    <li class="item">
+                        <img src="./img/our-work/img2.png" alt="Телефон и компютер" width="370" height="294">
+                        <div class="product-work-container">
+                            <p class="info">Мобильные приложения</p>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <img src="./img/our-work/img3.png " alt="Человек и планшет" width="370" height="294">
+                        <div class="product-work-container">
+                            <p class="info">Дизайнерские решения</p>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -420,9 +435,18 @@
         </div>
     </div>
         </footer>
-        
-    
 
+        <div class="backdrop is-hidden" data-modal>
+                <div class="modal">
+                    <button type="button" class="close" data-modal-close >
+                        <svg class="icon-close"width="18" height="18">
+                            <use href="./img/sprite-icon.svg#icon-close" ></use>
+                        </svg>
+                    </button>
+                </div>
+        </div>
+
+    <script src="/js/modal.js"></script>
 </body>
 
 </html>
