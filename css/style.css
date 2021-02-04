@@ -80,6 +80,7 @@ img {
   padding-left: 15px;
   padding-right: 15px;
 }
+
 header .container {
   display: flex;
   justify-content: space-between;
@@ -117,6 +118,8 @@ header .container {
 
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition: color var(--timing-function) var(--timing250ms);
 }
 
 .site-nav .current::after {
@@ -178,6 +181,8 @@ header .container {
 
   padding-top: 24px;
   padding-bottom: 25px;
+
+  transition: color var(--timing-function) var(--timing250ms);
 }
 
 .contacts-list .link:hover,
@@ -475,6 +480,9 @@ header .container {
   height: 100%;
   color: var(--social-icon);
   border-radius: 50%;
+
+  transition: color var(--timing-function) var(--timing250ms),
+  background-color var(--timing-function) var(--timing250ms);
 }
 
 .team-section .social-link:hover,
@@ -520,6 +528,9 @@ header .container {
   height: 100%;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+
+  transition: color var(--timing-function) var(--timing250ms),
+  background-color var(--timing-function) var(--timing250ms);
 }
 
 .clients .clients-link:hover,
@@ -620,6 +631,9 @@ header .container {
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--text-title-white);
   border-radius: 50%;
+
+  transition: color var(--timing-function) var(--timing250ms),
+  background-color var(--timing-function) var(--timing250ms);
 }
 
 .social-footer .ft-link:hover,
@@ -653,6 +667,9 @@ header .container {
   border-radius: 4px;
   padding: 6px 22px;
   cursor: pointer;
+  transition: color var(--timing-function) var(--timing250ms),
+  background-color var(--timing-function) var(--timing250ms),
+  filter var(--timing-function) var(--timing250ms);
 }
 
 .filter-button .btn-list:not(:last-child) {
@@ -663,6 +680,8 @@ header .container {
 .filter-button .link:focus {
   background-color: var(--accent-color);
   color: var(--text-title-white);
+  filter: box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 button {
   font-family: inherit;
